@@ -1,25 +1,24 @@
-
 # BurkittLymphomaR
 
-<!-- badges: start -->
-<!-- badges: end -->
-
-The goal of BurkittLymphomaR is to ...
+The `BurkittLymphomaR` R package accompanies the analysis carried out in the [burkitt_lymphoma](https://github.com/kane9530/burkitt_lymphoma) github repository. 
 
 ## Installation
 
-You can install the development version of BurkittLymphomaR like so:
+You can install the development version of `BurkittLymphomaR` like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+devtools::install_github("kane9530/BurkittLymphomaR")
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
+## Loading datasets
+For function documentation, run `?my_function`
 
 ``` r
 library(BurkittLymphomaR)
-## basic example code
-```
 
+print(dplyr::glimpse(BLGSP_DGEList))
+print(dplyr::glimpse(BLGSP_metadata))
+print(dplyr::glimpse(ebv_genes))
+print(broadSet.C2.ALL)
+
+```

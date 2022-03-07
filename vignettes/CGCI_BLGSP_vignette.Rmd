@@ -1,0 +1,85 @@
+---
+title: "<center> Preliminary analysis of TCGI-BLGSP dataset <center>"
+author:
+- Kane Toh^[Genomics and Data Analytics Core (GeDaC), Cancer Science Institute of Singapore, National University of Singapore; kanetoh@nus.edu.sg]
+date: "<center> _`r Sys.Date()`_ <center>"
+output:
+  html_document:
+    code_folding: show
+    df_print: paged
+    theme: cerulean
+    highlight: tango
+    toc: yes
+    toc_float:
+      collapsed: true
+      smooth_scroll: true
+    number_sections: true
+  pdf_document:
+    fig_caption: yes
+    toc: yes
+editor_options: 
+  markdown: 
+    wrap: 72
+vignette: >
+  %\VignetteIndexEntry{BurkittLymphomaR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r chunk_options, include = FALSE}
+knitr::opts_chunk$set(warning=FALSE, message=FALSE)
+```
+
+```{r load_data, include=FALSE}
+load(file = "../data/BLGSP_DGEList.rda")
+load(file= "../data/BLGSP_metadata.rda")
+load(file= "../data/ebv_genes.rda")
+load(file= "../data/broadSet.C2.ALL.rda")
+
+```
+
+```{r source_scripts, include=FALSE}
+# Source all helper scripts in the scripts folder ----
+path = "../R"
+file.sources = list.files(path = path,
+                          pattern="*.R")
+# Make sure that file.sources returns a non-empty list of R scripts
+stopifnot(length(file.sources)!=0)
+
+# Source all scripts from script directory  
+sapply(paste(path,"/",file.sources, sep=""),source)
+```
+
+```{r packages, include=FALSE}
+library(dplyr)
+
+```
+# Description
+
+Here, I quickly demonstrate the data that is saved in the `BurkittLymphomaR` package. Together with the dependencies, this should be sufficient to run the analysis from the main github directory. 
+
+## EdgeR DGEList
+```{r BLGSP_DGEList}
+print(dplyr::glimpse(BLGSP_DGEList))
+?BLGSP_DGEList
+```
+## BLGSP metadata
+
+```{r BLGSP_metadata}
+print(dplyr::glimpse(BLGSP_metadata))
+?BLGSP_metadata
+```
+## EBV genes list
+
+```{r}
+dplyr::glimpse(ebv_genes)
+?ebv_genes
+```
+## MSigDB C2 collection
+
+```{r}
+broadSet.C2.ALL
+?broadSet.C2.ALL
+```
+
+

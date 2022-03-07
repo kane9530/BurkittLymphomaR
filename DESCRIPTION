@@ -1,0 +1,44 @@
+Package: BurkittLymphomaR
+Title: RNA-seq analysis of Endemic and Sporadic Burkitt Lymphoma patients in the CGCI-BLGSP dataset
+Version: 0.0.0.9000
+Authors@R: 
+    person("Kane", "Toh", , "kanetoh@nus.edu.sg", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Preliminary analysis.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Depends: 
+    R (>= 2.10)
+LazyData: true
+LazyDataCompression: xz
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr
+Imports: 
+    EnsDb.Hsapiens.v86,
+    edgeR,
+    DT,
+    gt,
+    plotly,
+    RColorBrewer,
+    limma,
+    Glimma,
+    curl,
+    gplots,
+    pheatmap,
+    GSEABase,
+    gprofiler2,
+    msigdbr,
+    magrittr,
+    gtools,
+    tidyr,
+    dplyr,
+    readr,
+    ggplot2,
+    assertthat,
+    grDevices,
+    tibble,
+    stringr
